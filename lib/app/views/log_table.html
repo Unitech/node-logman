@@ -1,0 +1,22 @@
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Profile pic</th>
+      <th>Username</th>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Creation date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="log in logs | orderBy:'-created_at' | limitTo:10">
+      <td>{{log}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.fname}} {{user.lname}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.created_at | date:'dd/MM/yyyy @ h:mma'}}</td>
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,27 @@
+
+<div class="row">
+
+  <div class="span3">
+
+    <div class="todo mrm">
+      <ul>
+	<li ng-repeat="client in clientProps" ng-click="display(client)" ng-class="{'todo-done' : client == propSelected}">
+	  <div class="todo-icon fui-man-24"></div>
+	  <div class="todo-content">
+	    <h4 class="todo-name">{{client}}</h4>
+	    <small><span class="badge badge-info">{{logs[client].length}}</span> &nbsp;logged</small>
+	  </div>
+	</li>
+
+      </ul>
+    </div>
+
+    <h3>Actions</h3>
+    <a class="btn btn-block btn-danger" ng-click="flush()">Flush logs</a>
+  </div>
+  
+  <div class="span9">  
+    <h3>Log for {{propSelected}}</h3>    
+    <log-table logs="logsView"></log-table>
+  </div>
+</div>

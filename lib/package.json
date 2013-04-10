@@ -1,0 +1,18 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.1.0",
+      "axon" : "*",
+      "node-uuid" : "*",
+      "redis" : "*",
+      "debug" : "*",
+      "underscore" : "*",
+      "socket.io" : "*",
+      "each" : "*"
+  }
+}

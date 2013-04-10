@@ -1,0 +1,69 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <title>Loggy</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="styles/flat-ui.css">
+  <link rel="stylesheet" href="styles/over.css">
+</head>
+<body ng-app="Loggy">
+
+  <div class="container">
+
+    <div class="row">
+      <div class="span1">
+	<img src="/img/book.png" width="50" style="margin-left : 25px">
+      </div>
+      <div class="span11">
+        <div class="navbar navbar-inverse" ng-controller="NavbarCtrl">
+          <div class="navbar-inner">
+            <div class="container">
+              <div class="nav-collapse">
+                <ul class="nav">		  
+                  <li ng-repeat="el in menu" ng-class="{active : isActive(el)}">
+		    <a href="{{el.url}}">
+		      {{el.title}}
+		    </a>
+		  </li>		  
+                </ul>
+		
+		<ul class="nav pull-right">
+		  <li><a>CDN</a></li>
+		  <li><a>Quick Doc</a></li>
+		  <li><a>Sign in</a></li>
+		</ul>
+		  
+              </div><!--/.nav-collapse -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-view></div>
+
+  </div>
+
+  <!-- <footer> -->
+  <!--   Je; -->
+  <!-- </footer> -->
+    
+  <!-- build:js scripts/scripts.js -->
+  <script src="scripts/angular.min.js"></script>
+  <script src="scripts/angular-resource.js"></script>
+  <script src="scripts/jquery-1.9.1.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/logmanWeb.js"></script>
+  <script src="scripts/socket.js"></script>
+  <script src="scripts/moment.min.js"></script>
+  <script src="scripts/jiffy.js"></script>
+  <!-- endbuild -->
+  
+</body>
+</html>

@@ -1,0 +1,27 @@
+<div class="row">
+
+  <div class="span12">	
+    <h2>Server connected</h2>
+    
+    <table class="table table-striped table-bordered">
+      <thead>
+	<tr>
+	  <th>Address</th>
+	  <th>port</th>
+	  <th>time connected</th>
+	  <th>_id</th>
+	</tr>
+      </thead>
+      <tbody>
+	<tr ng-repeat="server in servers">
+	  <td>{{server.address}}</td>
+	  <td>{{server.port}}</td>
+	  <td>{{server.date_connected | fromNow}}</td>
+	  <td>{{server._id}}</td>	  
+	</tr>
+      </tbody>
+    </table>
+    
+  </div>
+  
+</div>
