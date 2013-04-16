@@ -19,7 +19,8 @@ Logman is here muha.
 - Store them to redis
 - Realtime web interface if enabled
 
-![Logman](https://raw.github.com/Alexandre-Strzelewicz/Logman/master/img/screen.png)
+![Logman](https://github.com/Alexandre-Strzelewicz/Logman/raw/master/img/screen.png)
+
 
 ### API
 
