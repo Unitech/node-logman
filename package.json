@@ -1,17 +1,32 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app"
-  },
-  "dependencies": {
-    "express": "3.1.0",
-      "axon" : "*",
-      "node-uuid" : "*",
-      "redis" : "*",
-      "debug" : "*",
-      "underscore" : "*",
-      "socket.io" : "*"
-  }
+    "name": "Logman",
+    "description" : "Client and Server side logging with sexy flat realtime interface",
+    "version": "0.0.1",
+    "author" : {
+	"name" : "Strzelewicz Alexandre",
+	"email" : "strzelewicz.alexandre@gmail.com"
+    },
+    "keywords" : [
+	"logging",
+	"logman",
+	"logger",
+	"client side log",
+	"server side log",
+	"log",
+	"javascript log",
+	"realtime"
+    ],
+    "dependencies": {
+	"express": "3.1.0",
+	"axon" : "*",
+	"node-uuid" : "*",
+	"redis" : "*",
+	"debug" : "*",
+	"underscore" : "*",
+	"socket.io" : "*",
+	"each" : "*"
+    },
+    "engines": {
+	"node": "*"
+    }
 }

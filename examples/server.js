@@ -1,8 +1,8 @@
 
-var LoggyServer = require('../logmanServer.js');
+var LoggyServer = require('../lib/logmanServer.js');
 
 var logServer = new LoggyServer({
-    bind_port : 3000,
+    bind_port : 3044,
     web_port : 4444,
     enableMonitoringPage : true,
     enableClientSideLog : true

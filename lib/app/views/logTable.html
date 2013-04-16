@@ -8,7 +8,7 @@
   </thead>
   <tbody>
     <tr ng-repeat="log in logs | limitTo:20" ng-class="{info : log.new == true}">
-      <td ng-bind-html-unsafe="log | beautify"></td>
+      <td>{{log}}</td>
       <td>{{log.date | date:'dd/MM/yyyy @ h:mma'}}</td>
       <td>{{log.date | fromNow }}</td>
     </tr>
