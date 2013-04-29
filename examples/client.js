@@ -5,14 +5,14 @@ console.log(Logger);
 
 Logger.init({
     port : 3044,
-    ip : '127.0.0.1'
+    ip : '127.0.0.1',
+    remote : true,
+    display : true
 });
 
-Logger.events.on('connect', function() {
-    console.log('connected');
-});
+var logServer = Logger.getPrefixedLogger('user');
 
 setInterval(function(){
-    console.log('Sending error');
-    Logger.error({err : 'toto'});
+    // Will send {username : 'toto'} with key user:new_user
+    logServer('new_user', {username : 'toto'});
 }, 1000);

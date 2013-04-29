@@ -1,10 +1,34 @@
 # Logman
 
-App with two loggers which permits to log client and server side events, also compatible with afflux-express.js (log middleware).
+App with two loggers which permits to log client and server side events.
 
 The server store the logs into Redis database and, if enabled, can disserve a realtime web interface to show you the last log messages.
 
 Logman is here muha.
+
+![Logman](https://github.com/Alexandre-Strzelewicz/Logman/raw/master/img/screen.png)
+
+## Testing this fast
+
+```
+git clone git@github.com:Alexandre-Strzelewicz/Logman.git
+cd Logman
+npm install
+cd examples
+node server.js
+```
+
+In another term : 
+```
+node client.js
+```
+
+Then open your browser :
+```
+google-chrome "http://localhost:4444/#/server"
+```
+
+And see the realtime logs ;)
 
 ## Stack
 
@@ -19,9 +43,6 @@ Logman is here muha.
 - Store them to redis
 - Realtime web interface if enabled
 
-![Logman](https://github.com/Alexandre-Strzelewicz/Logman/raw/master/img/screen.png)
-
-
 ### API
 
 This directly start the log server and the web interface : 
@@ -35,7 +56,7 @@ var logServer = new LoggyServer({
 });
 ```
 
-## Client side logging
+## Client side logging - logmanWeb.js
 
 In order to log client side messages you must include **logmanWeb.js** in your pages. Messages are sent to the Logman server via JSONP, it doesn't need jQuery or other dependencies. 
 
@@ -62,11 +83,52 @@ logman.notify(event, msg)  // send a custome event with msg to Logman
 logman.monitor()           // Not implemented yet
 ```
 
-## Server side logging - afflux-logger.js
+## Server side logging - logmanClient.js
 
-For documentation please reffer to : https://github.com/Alexandre-Strzelewicz/afflux-client.js
+Logger for server side applications, send events and custom message to Logman. Available in lib/logmanClient.js
 
-Just make sure that you use the same port for transiting the logs.
+## Options
+
+### Init
+
+```javascript
+var Logger = require('./path/to/logmanClient.js');
+
+Logger.init({
+   port : 3044,      // Port of the MessageBus.js server   
+   ip : '127.0.0.1', // IP adress of the MessageBus.js server
+   remote : true,    // Do the log should send data to MessageBus.js
+   display : true    // Display log messages ? (for debug)
+});
+```
+
+### Usage
+
+#### Custom events
+
+If you want to throw custom events (user:signup for example) :
+
+```javascript
+var log = require('./path/to/logmanClient.js').getCustomLogger();
+
+// Will send { event : 'user:signup', msg : { dt : 'User alex registered' } }
+log('user:signup', {dt : 'User alex registered'});
+```
+
+#### Prefixed custom events
+
+
+
+#### Same event logger (TJ debug like)
+
+If you want to use the same storage key (also a route with Messagebus.js):
+
+```javascript
+var log = require('./path/to/logmanClient.js').getLogger('user:registration');
+
+// Will send { event : 'user:registration', msg : 'User registered'}
+log({msg : 'User registered'});
+```
 
 ## Express/Connect middleware logging - afflux-express.js
 
@@ -74,7 +136,7 @@ For documentation please reffer to : https://github.com/Alexandre-Strzelewicz/af
 
 Just make sure that you use the same port for transiting the logs.
 
-# License
+## License
 
 (The MIT License)
 
