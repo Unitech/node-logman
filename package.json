@@ -1,10 +1,17 @@
 {
   "name": "logman",
-  "description" : "Client and Server side logging with sexy flat realtime interface",
-  "version": "0.0.1",
-  "author" : {
-    "name" : "Strzelewicz Alexandre",
-    "email" : "strzelewicz.alexandre@gmail.com"
+  "description" : "Embed a log interface in your node-app",
+  "version": "0.0.2",
+  "engines" : {
+    "node" : ">=0.8"
+  },
+  "author": {
+    "name": "Strzelewicz Alexandre",
+    "email": "as@unitech.io",
+    "url": "http://unitech.io"
+  },
+  "bin": {
+    "logman": "./bin/logman"
   },
   "keywords" : [
     "logging",
@@ -28,9 +35,10 @@
   },
   "repository": {
     "type" : "git",
-    "url" : "git://github.com/Unitech/Logman.git"
+    "url" : "git://github.com/Unitech/node-logman.git"
   },
   "engines": {
     "node": "*"
-  }
+  },
+  "license": "MIT"
 }

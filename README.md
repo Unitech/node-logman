@@ -1,4 +1,18 @@
-# Logman
+# node-logman
+
+node-logman provide a log interface that you can embed in your Node app.
+
+![Logman](https://github.com/Alexandre-Strzelewicz/Logman/raw/master/img/screen.png)
+
+Install it
+
+```
+$ npm install logman -g
+```
+
+
+
+# Old
 
 App with two loggers which permits to log client and server side events.
 
@@ -6,7 +20,6 @@ The server store the logs into Redis database and, if enabled, can disserve a re
 
 Logman is here muha.
 
-![Logman](https://github.com/Alexandre-Strzelewicz/Logman/raw/master/img/screen.png)
 
 ## Testing this fast
 
