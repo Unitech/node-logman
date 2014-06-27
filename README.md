@@ -1,4 +1,4 @@
-# node-logman
+# (DEPRECATED) node-logman
 
 node-logman provide a log interface that you can embed in your Node app.
 
